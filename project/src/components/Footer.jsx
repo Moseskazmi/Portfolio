@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 import { FiGithub, FiLinkedin, FiMail, FiInstagram, FiHeart } from 'react-icons/fi';
-
+import VisitorCounter from "./VisitorCounter";
 const navLinks = [
   { to: 'about', label: 'About' },
   { to: 'skills', label: 'Skills' },
@@ -77,12 +77,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted">
-        <span>© {new Date().getFullYear()} Moses Kazmi. All rights reserved.</span>
-        <span className="flex items-center gap-1.5">
-          Made with <FiHeart className="text-highlight" fill="currentColor" /> by Moses Kazmi
-        </span>
-      </div>
+     <div className="mt-10 pt-6 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-sm text-muted">
+  
+  {/* Left */}
+  <div className="text-center md:text-left">
+    © {new Date().getFullYear()} Moses Kazmi. All rights reserved.
+  </div>
+
+  {/* Center */}
+  <div className="flex justify-center">
+    <VisitorCounter />
+  </div>
+
+
+</div>
     </footer>
   );
 }
